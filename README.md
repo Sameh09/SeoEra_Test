@@ -34,11 +34,13 @@ git clone https://github.com/Sameh09/SeoEra_Test.git
 cd SeoEra_Test
 </pre>
 ### 2. Install Dependencies
+<pre>
 composer install
-
+</pre>
 ### 3. Install the Project Automatically
+<pre>
 php artisan install:project
-
+</pre>
 ⚠️ During the development process, I executed the migrate:fresh command as part of the php artisan install:project setup automation. Unfortunately, this action reset the database and resulted in the removal of previously logged data, including entries recorded by Laravel Telescope.
 
 I sincerely apologize for this oversight, as it may have affected the completeness of historical logs and database data intended for review.
