@@ -29,10 +29,10 @@ This Laravel 11 project is a full-stack web application and API that includes a 
 To deploy and test this application locally:
 
 ### 1. Clone the repository
-
+<pre>
 git clone https://github.com/Sameh09/SeoEra_Test.git
 cd SeoEra_Test
-
+</pre>
 ### 2. Install Dependencies
 composer install
 
