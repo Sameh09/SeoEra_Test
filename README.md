@@ -41,6 +41,8 @@ composer install
 <pre>
 php artisan install:project
 </pre>
+> ⚠️ **Note:** On some systems, the `php artisan install:project` command may fail the first time due to database cache dependencies. If that happens, simply run the command again after the database is created.
+
 Sometimes the command may appear to hang or get stuck the first time it's run.
 If that happens, simply stop it and run the command again:
 ⚠️ During the development process, I executed the migrate:fresh command as part of the php artisan install:project setup automation. Unfortunately, this action reset the database and resulted in the removal of previously logged data, including entries recorded by Laravel Telescope.
