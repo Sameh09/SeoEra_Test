@@ -16,7 +16,6 @@ class InstallProject extends Command
 
         $this->info("Installing project...");
 
-        $this->call('composer', ['install']);
 
 
         if (!file_exists(base_path('.env'))) {
