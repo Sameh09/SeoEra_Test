@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable , SoftDeletes;
 
     public function getJWTIdentifier()
     {
@@ -33,7 +34,9 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'phone',
         'username',
-        'mobile'
+        'mobile',
+        'is_admin'
+
     ];
 
     /**

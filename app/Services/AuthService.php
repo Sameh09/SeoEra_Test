@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 use App\Models\User;
@@ -43,7 +44,7 @@ class AuthService
         return JWTAuth::refresh(JWTAuth::getToken());
     }
 
-    public function me(): User
+    public function me()
     {
         return auth()->user();
     }
