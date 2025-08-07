@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use PDO;
@@ -21,7 +20,6 @@ class InstallProject extends Command
         if (!file_exists(base_path('.env'))) {
             copy(base_path('.env.example'), base_path('.env'));
             $this->info('.env file copied');
-            $this->reloadEnv();
         }
 
         $this->createDatabaseIfNotExists();
@@ -30,9 +28,9 @@ class InstallProject extends Command
 
         $this->call('jwt:secret', ['--force' => true]);
 
-
+        
         $this->call('migrate:fresh', ['--seed' => true]);
-
+        
         $this->call('optimize:clear');
 
 
@@ -44,14 +42,6 @@ class InstallProject extends Command
         $this->call('serve');
     }
 
-    protected function reloadEnv()
-    {
-        $dotenv = \Dotenv\Dotenv::createImmutable(base_path());
-        $dotenv->load();
-
-        Artisan::call('config:clear');
-        Artisan::call('config:cache');
-    }
     protected function createDatabaseIfNotExists()
     {
         $dbName = env('DB_DATABASE');
