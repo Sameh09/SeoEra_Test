@@ -42,8 +42,18 @@ composer install
 php artisan install:project
 </pre>
 ⚠️ During the development process, I executed the migrate:fresh command as part of the php artisan install:project setup automation. Unfortunately, this action reset the database and resulted in the removal of previously logged data, including entries recorded by Laravel Telescope.
-
 I sincerely apologize for this oversight, as it may have affected the completeness of historical logs and database data intended for review.
+
+# Scheduled Tasks
+A daily report email of new users and posts is automatically sent to the admin at midnight.
+
+This is handled via Laravel's scheduler (schedule:run), configured in routes/console.php.
+
+To enable it on production (via cron job):
+
+* * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
+
+
 
 ### Included Files
 
