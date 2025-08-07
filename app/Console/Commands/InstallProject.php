@@ -28,9 +28,11 @@ class InstallProject extends Command
 
         $this->call('jwt:secret', ['--force' => true]);
 
+        
+        $this->call('migrate:fresh', ['--seed' => true]);
+        
         $this->call('optimize:clear');
 
-        $this->call('migrate:fresh', ['--seed' => true]);
 
         exec('npm install');
         exec('npm run build');
