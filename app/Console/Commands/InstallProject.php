@@ -35,5 +35,8 @@ class InstallProject extends Command
         exec('npm run build');
 
         $this->info(" Project installed successfully!");
+
+        $this->call('serve');
+
     }
 }

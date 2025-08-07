@@ -17,7 +17,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraphs(3, true), 
             'contact_phone' => $this->faker->unique()->phoneNumber,
-            'user_id' => rand(1, 50),
+            'user_id' => rand(1, 20),
         ];
     }
 }
