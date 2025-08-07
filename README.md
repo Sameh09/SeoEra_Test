@@ -63,7 +63,7 @@ The following user accounts are created automatically using seeders for testing 
 | Role     | Email            | Password  |
 |----------|------------------|-----------|
 | Admin    | admin@mail.com   | password  |
-| Regular  | user@mail.com    | password  |
+| User     | user@mail.com    | password  |
 
 
 ### Included Files
